@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7705A9601E593260008CAF1D /* MPCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7705A95F1E593260008CAF1D /* MPCManager.swift */; };
 		774BE7601DD3A24D00C751E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774BE75F1DD3A24D00C751E5 /* AppDelegate.swift */; };
 		774BE7641DD3A24D00C751E5 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774BE7631DD3A24D00C751E5 /* SecondViewController.swift */; };
 		774BE7671DD3A24D00C751E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 774BE7651DD3A24D00C751E5 /* Main.storyboard */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7705A95F1E593260008CAF1D /* MPCManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPCManager.swift; sourceTree = "<group>"; };
 		774BE75C1DD3A24D00C751E5 /* Emergency.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Emergency.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		774BE75F1DD3A24D00C751E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		774BE7631DD3A24D00C751E5 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 			children = (
 				774BE75F1DD3A24D00C751E5 /* AppDelegate.swift */,
 				77D80EC51DF77C6D006855B8 /* NewEmergency.swift */,
+				7705A95F1E593260008CAF1D /* MPCManager.swift */,
 				77D80ECB1DF793F2006855B8 /* listEmergencies.swift */,
 				774BE7631DD3A24D00C751E5 /* SecondViewController.swift */,
 				774BE7651DD3A24D00C751E5 /* Main.storyboard */,
@@ -297,6 +300,7 @@
 				77D80ECC1DF793F2006855B8 /* listEmergencies.swift in Sources */,
 				774BE7601DD3A24D00C751E5 /* AppDelegate.swift in Sources */,
 				774C83F31DD7DAAB002678ED /* UserModel.swift in Sources */,
+				7705A9601E593260008CAF1D /* MPCManager.swift in Sources */,
 				774C83F71DD7DED2002678ED /* Login.swift in Sources */,
 				77D80ED21DF7A65F006855B8 /* EmergencyListCell.swift in Sources */,
 				77D80ED01DF79DE5006855B8 /* Emergency.swift in Sources */,

@@ -3,16 +3,17 @@
 //  Emergency
 //
 //  Created by Sophie Gairo on 12/6/16.
-//  Copyright © 2016 Sophie Gairo. All rights reserved.
+//  Copyright © 2016-2017 Sophie Gairo. All rights reserved.
 //
 
 import UIKit
 
 class NewEmergency: UIViewController {
     let loc = GetLocation()
-    var city: String?
-    var state: String?
-    var SelectedUser:String?
+    var city: String!
+    var state: String!
+    var zip: String!
+    var SelectedUser: String?
     
     
     
@@ -22,14 +23,16 @@ class NewEmergency: UIViewController {
         super.viewDidLoad()
         loc.getAdress { result in
             
-            self.city = result["City"] as? String
             
+            self.city = (result["City"] as? String)!
             
-            self.state = result["State"] as? String
+            self.zip = (result["ZIP"] as? String)!
+            self.state = (result["State"] as? String)!
             
             
         }
         
+        //print(SelectedUser!)
         user_lbl.text = SelectedUser
     }
     
@@ -37,10 +40,11 @@ class NewEmergency: UIViewController {
         
         //TO DO: check if flag is 1, thus user cant post emergency, for now just leave it as is.
         
+        //if available through internet, send, otherwise store in local memory and find a way to constantly check for internet
         
         var request = URLRequest(url: URL(string:"http://seniorproject.sophiegairo.com/newEmergency.php")!)
         request.httpMethod = "POST"
-        let postString = "city=\(city)&state=\(state)"
+        let postString = "city=\(city!)&state=\(state!)&zip=\(zip!)"
         
         print(postString)
         request.httpBody = postString.data(using: .utf8)
@@ -48,7 +52,7 @@ class NewEmergency: UIViewController {
         
         
         
-        
+        //maybe if http status code is 500 then do a Retry-After
         let task = URLSession.shared.dataTask(with: request) { data, response, error in guard let data = data, error == nil else {
             print("error=\(error)")
             return

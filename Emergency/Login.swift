@@ -51,11 +51,12 @@ class Login: UIViewController, HomeModelProtocal {
                 loginFail = false
 
             }
-            if loginFail{
-            error_lbl.text = "Username or Password is incorrect. Please try again."
-            }
+            
         }
         
+        if loginFail{
+            error_lbl.text = "Username or Password is incorrect. Please try again."
+        }
         
         
         
@@ -72,7 +73,7 @@ class Login: UIViewController, HomeModelProtocal {
             
             
             let destination = segue.destination as? NewEmergency
-            destination?.SelectedUser = username_txt.text
+            destination?.SelectedUser = username_txt.text!
         }
     }
 
