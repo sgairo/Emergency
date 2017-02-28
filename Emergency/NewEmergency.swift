@@ -14,6 +14,7 @@ class NewEmergency: UIViewController, UITableViewDelegate, UITableViewDataSource
     var city: String!
     var state: String!
     var zip: String!
+    var deviceName: String!
     var SelectedUser: String?
     
     @IBOutlet weak var tblPeers: UITableView!
@@ -38,6 +39,7 @@ class NewEmergency: UIViewController, UITableViewDelegate, UITableViewDataSource
             self.state = (result["State"] as? String)!
   
         }
+        self.deviceName = UIDevice.current.name
         tblPeers.delegate = self
         tblPeers.dataSource = self
         
@@ -51,7 +53,7 @@ class NewEmergency: UIViewController, UITableViewDelegate, UITableViewDataSource
         isAdvertising = true
         
         //print(SelectedUser!)
-        user_lbl.text = SelectedUser
+        user_lbl.text = UIDevice.current.name
     }
     
     //reset view
@@ -75,7 +77,7 @@ class NewEmergency: UIViewController, UITableViewDelegate, UITableViewDataSource
         
         var request = URLRequest(url: URL(string:"http://seniorproject.sophiegairo.com/newEmergency.php")!)
         request.httpMethod = "POST"
-        let postString = "city=\(city!)&state=\(state!)&zip=\(zip!)"
+        let postString = "city=\(city!)&state=\(state!)&zip=\(zip!)&deviceName=\(deviceName!)"
         
         print(postString)
         request.httpBody = postString.data(using: .utf8)

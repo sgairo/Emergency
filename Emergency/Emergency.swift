@@ -14,6 +14,8 @@ class Emergency: NSObject {
     var id: String?
     var city: String?
     var state: String?
+    var zip: String?
+    var deviceName: String?
     
     //empty constructor
     
@@ -22,21 +24,25 @@ class Emergency: NSObject {
         id = ""
         city = ""
         state = ""
+        zip = ""
+        deviceName = ""
     }
     
     //construct with parameters
     
-    init(theID: String, theCity: String, theState: String) {
+    init(theID: String, theCity: String, theState: String, theZip: String, theDeviceName: String) {
         self.id = theID
         self.city = theCity
         self.state = theState
+        self.zip = theZip
+        self.deviceName = theDeviceName
     }
     
     
     //prints object's current state
     
     override var description: String {
-        return "id: \(id), City: \(city), State: \(state)"
+        return "id: \(id), City: \(city), State: \(state), Zip: \(zip), Device Name: \(deviceName)"
         
     }
     

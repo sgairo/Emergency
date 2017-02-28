@@ -57,7 +57,7 @@ class listEmergencies: UIViewController, UITableViewDataSource, UITableViewDeleg
             
            // if(item.city == city && item.state == state) {
                 //put into table cell
-                ids.insert(item.id!, at:i)
+                ids.insert(item.deviceName!, at:i)
                 cities.insert(item.city!, at:i)
                 states.insert(item.state!, at:i)
                 //cell.idValue_lbl.text = String(describing: item.id!)
@@ -78,7 +78,7 @@ class listEmergencies: UIViewController, UITableViewDataSource, UITableViewDeleg
       
 
         print("in table view")
-        //var cell = UITableViewCell() as! AleTableViewCell
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "EmergencyEvents", for: indexPath) as! EmergencyListCell
         
                print(self.ids.count)

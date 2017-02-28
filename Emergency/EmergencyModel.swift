@@ -86,11 +86,15 @@ class EmergencyModel: NSObject, URLSessionDataDelegate {
             let id = jsonElement["id"] as? String
             let city = jsonElement["city"] as? String
             let state = jsonElement["state"] as? String
+            let zip = jsonElement["zip"] as? String
+            let deviceName = jsonElement["deviceName"] as? String
             
-            print("id= ",id, " city= ", city, " state= ",state)
+            print("id= ",id, " city= ", city, " state= ",state, "zip= ",zip, "Device Name= ",deviceName)
             emergency.id = id!
             emergency.city = city!
             emergency.state = state!
+            emergency.zip = zip!
+            emergency.deviceName = deviceName!
             
             emergencies.add(emergency)
             print(emergencies.count)
